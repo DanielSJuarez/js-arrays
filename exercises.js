@@ -5,14 +5,13 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function arrStr(str, num){
+    let newArr = []
+    for (let i = 0; i < num; i++){
+        newArr.push(str);
+    }    
+    return newArr
+}
 
 // -----------------------------------------------
 
@@ -23,14 +22,10 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function reverseArr(arr){
+    let newRevArr = arr.reverse();
+    return newRevArr;
+}
 
 // -----------------------------------------------
 
@@ -40,14 +35,15 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function falsy(arr){
+    let falsyArr = arr
+    for(let i = 0; i < falsyArr.length; i++){
+        if(falsyArr[i] == 0 ||falsyArr[i] == -0 ||falsyArr[i] == undefined ||falsyArr[i] == null ||falsyArr[i] == NaN ||falsyArr[i] == false ||falsyArr[i] == ''){
+            falsyArr.splice([i], 1);
+        }   
+    }   
+    return falsyArr;
+}
 
 // -----------------------------------------------
 
@@ -59,14 +55,13 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function valOfArr(nestArr){
+    const objOfArr = {};
+    for (let i = 0; i < nestArr.length; i++){
+        objOfArr.nestArr[i][0] = nestArr[i][1];
+    }
+    return objOfArr;
+}
 
 // -----------------------------------------------
 
@@ -77,14 +72,10 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function dups(arr){
+    const uniArr = [...new Set(arr)];
+    return uniArr;
+}
 
 // -----------------------------------------------
 
@@ -98,14 +89,15 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function exactArr(arr1, arr2){
+    for (let i = 0; i < arr1.length; i++){
+        if(arr2.includes(arr1[i]) && arr1.length == arr2.length){
+        return true
+    } else {
+        return false;
+        }
+    }
+}
 
 // -----------------------------------------------
 
@@ -128,14 +120,19 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function flatArrInput(arr) {
+    const nestArr = [...arr];
+    const newArr = [];
+    while (nestArr.length) {
+      const nextArr = nestArr.pop();
+      if (Array.isArray(nextArr)) {
+        nestArr.push(...nextArr);
+      } else {
+        newArr.push(nextArr);
+      }
+    }
+  return newArr.reverse();
+  }
 
 // -----------------------------------------------
 
@@ -147,13 +144,11 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function splitArr(arr, num) {
+    const splitArr = Math.ceil(arr.length / num);
+    return new Array(num)
+    .fill('')
+    .map((_, i) => arr.slice(i * splitArr, (i + 1) * splitArr));
+}
 
 // -----------------------------------------------
