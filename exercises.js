@@ -13,6 +13,13 @@ function arrStr(str, num){
     return newArr
 }
 
+// const anotherWay = function(str, i){
+//     return Array.from({
+//         length: i
+//     }, function(){
+//         return str
+//     })
+// }
 // -----------------------------------------------
 
 // ---------------------
@@ -23,10 +30,10 @@ function arrStr(str, num){
 // Put your answer below -------------------------
 
 function reverseArr(arr){
-    let newRevArr = arr.reverse();
+    let newRevArr = arr.slice().reverse();
     return newRevArr;
 }
-
+//splice mutates, slice does not.
 // -----------------------------------------------
 
 // ---------------------
@@ -38,12 +45,27 @@ function reverseArr(arr){
 function falsy(arr){
     let falsyArr = arr
     for(let i = 0; i < falsyArr.length; i++){
-        if(falsyArr[i] == 0 ||falsyArr[i] == -0 ||falsyArr[i] == undefined ||falsyArr[i] == null ||falsyArr[i] == NaN ||falsyArr[i] == false ||falsyArr[i] == ''){
+        if(falsyArr[i] == 0 ||falsyArr[i] == -0 ||falsyArr[i] == !!undefined ||falsyArr[i] == null ||falsyArr[i] == NaN ||falsyArr[i] == false ||falsyArr[i] == ''){
             falsyArr.splice([i], 1);
         }   
     }   
     return falsyArr;
 }
+
+// function removeFalsy(arr){
+//     const newArr = {};
+//     for(let i of arr){
+//        if(i){
+//         newArr.push(i);
+//     }
+//     return newArr;
+//    }
+// }
+
+// let removeFalsy = function (arr){
+//     trueArray = arr.filter(Boolean); //boolean built in function that returns true or false
+//     return trueArray;
+// }
 
 // -----------------------------------------------
 
@@ -55,14 +77,15 @@ function falsy(arr){
 
 // Put your answer below -------------------------
 
-function valOfArr(nestArr){
-    const objOfArr = {};
+function arrToObj(nestArr){
+    const obj = {};
     for (let i = 0; i < nestArr.length; i++){
-        objOfArr.nestArr[i][0] = nestArr[i][1];
+        obj[nestArr[i][0]] = nestArr[i][1];
     }
-    return objOfArr;
+    return obj;
 }
 
+// create a functions = object.fromEntries(arr);
 // -----------------------------------------------
 
 // ---------------------
@@ -72,7 +95,7 @@ function valOfArr(nestArr){
 
 // Put your answer below -------------------------
 
-function dups(arr){
+function dupl(arr){
     const uniArr = [...new Set(arr)];
     return uniArr;
 }
@@ -99,6 +122,21 @@ function exactArr(arr1, arr2){
     }
 }
 
+// function comparArraays(arr1, arr2){
+//     if(arr1.length !== arr2.length){
+//         return false;
+//     }
+
+//     arr1.sort();
+//     arr2.sort();
+
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr1[i] !== arr2[i]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 // -----------------------------------------------
 
 //////////////////////////////////////////////////

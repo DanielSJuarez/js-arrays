@@ -8,12 +8,19 @@ let number = function(array){
     });
   }
 
+// function number(arr){
+//     let result = [];
+//     for(let i = 1; i <= arr.length; i++){
+//         result.push(i + ':' + arr[i - 1]);
+//     }
+//     return result
+// }
 // # 2
 // Filling an array (part 1)
 // https://www.codewars.com/kata/571d42206414b103dc0006a1/train/javascript
 
 const arr = function(N){
-    let newArr = [];
+    const newArr = [];
     if(arr.length = 0){
       return newArr;
     } else {
@@ -24,6 +31,7 @@ const arr = function(N){
      }
   };
 
+//const arr = N => N === undefined ? [] : [...Array(N).keys()];
 // # 3
 // Drone Fly-By
 // https://www.codewars.com/kata/58356a94f8358058f30004b5/train/javascript
@@ -43,6 +51,14 @@ function flyBy(lamps, drone){
     return lights.join('').toString();
   }
 
+// function flyBy(lamps, drone){
+//     let lampsOn = '';
+//     for(let i = 0; i < document.length; i++){
+//         lampsOn += 'o'
+//     }
+//     const lamapsOff = lamps.slice(lampsOn.length, lamps.length);
+//     return lampsOn + lamapsOff
+// }
 // # 4
 // Get the mean of an array
 // https://www.codewars.com/kata/563e320cee5dddcf77000158/train/javascript
@@ -52,7 +68,7 @@ function getAverage(marks){
     let grades = 0;
     
     for(let i = 0; i < marks.length; i++) {
-            grades += parseFloat(marks[i].toString());
+            grades += marks[i];
       } 
     averageGrade = Math.floor(grades / marks.length);
     return averageGrade;
